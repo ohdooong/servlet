@@ -4,8 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>체격 조건</title>
-		
+		<title>길이 변환</title>
 		<!-- Bootstrap CDN -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -13,16 +12,22 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>체격 조건 입력</h1>
-			<form class="d-flex" method="get" action="/lesson02/quiz03_1.jsp">
+			<h1>길이 변환</h1>
+			<form method="post" action="/lesson02/quiz04_1.jsp">
 				<div class="d-flex align-items-end">
-					<input type="text" class="form-control col-4" name="height" placeholder="키를 입력하세요.">
-					<span class="ml-1">cm</span>
-					<input type="text" class="form-control col-4 ml-3" name="weight" placeholder="몸무게를 입력하세요.">
-					<span class="ml-1">kg</span>
-					<button type="submit" class="btn btn-info ml-3">계산</button>
+					<input type="text" class="form-control col-3" name="length">
+					<span class="ml-2">cm</span>
 				</div>
+				
+				<label for="inch">인치</label><input type="checkbox" id="inch" name="distance" value="inch" class="ml-2">
+				<label for="yd">야드</label><input type="checkbox" id="yd" name="distance" value="yd" class="ml-2">
+				<label for="ft">피트</label><input type="checkbox" id="ft" name="distance" value="ft" class="ml-2">
+				<label for="meter">미터</label><input type="checkbox" id="meter" name="distance" value="meter" class="ml-2">
+				<br>
+				
+				<button type="submit" class="btn btn-success">변환하기</button>
+				
 			</form>
-		</div>	
+		</div>
 	</body>
 </html>
