@@ -1,0 +1,9 @@
+get: request body가 없다
+-브라우저주소(쿼리스트링)
+-a태그클릭(쿼리스트링)
+-form 태그 method="get"
+
+post : request body 내용 담김
+- form 태그 method="post"
+
+

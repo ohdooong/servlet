@@ -32,24 +32,22 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-<%
-	int i = 1;
-	Iterator<String> iter = goodsList.iterator();
-	
-	while (iter.hasNext()){
-		String goods = iter.next();
-	
-%>
+		<%
+			int i = 1;
+			Iterator<String> iter = goodsList.iterator();
+					
+			while (iter.hasNext()){
+				String goods = iter.next();
+				
+		%>
 		    <tr>
 		      <th scope="row"><%=i %></th>
 		      <td><%=goods %></td>
 		    </tr>
-<%
-
-		i++;
-	}
-
-%>		    
+		<%
+				i++;
+			}
+		%>
 		  </tbody>
 		</table>
 	</div>
