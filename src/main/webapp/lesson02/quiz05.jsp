@@ -30,7 +30,7 @@
 						<input type="text" name="beh" class="form-control">
 					</div>
 					<div>
-						<button type="submit" class="btn btn-success">계산하기</button>
+						<button type="submit" class="btn btn-success ml-2">계산하기</button>
 					</div>
 				</div>
 			</form>
