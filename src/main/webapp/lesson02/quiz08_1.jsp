@@ -66,32 +66,48 @@
 
 	%>
 	<%
-		String bookName = request.getParameter("title");
-		Iterator<Map<String, Object>> iter = list.iterator();
+		
+		// 테이블에 보여줄 책 정보(target) 뽑아내기
+		int id = Integer.valueOf(request.getParameter("id"));
+		
+		Map<String, Object> target = new HashMap<>();
+		
+		for (Map<String, Object> item : list) {
+			if(id == (int)item.get("id")) {
+				target = item;
+				break;
+			}
+		}
+		
 	
-		while (iter.hasNext()) {
-			Map<String, Object> kyopoBook = iter.next();
-			if (bookName.equals(kyopoBook.get("title"))) {
+	
+// 내 풀이	
+//		String bookName = request.getParameter("title");
+//		Iterator<Map<String, Object>> iter = list.iterator();
+	
+//		while (iter.hasNext()) {
+//			Map<String, Object> kyopoBook = iter.next();
+//			if (bookName.equals(kyopoBook.get("title"))) {
 				
 	%>
 	
 	<div class="container">
 		<div class="d-flex align-items-start">
 			<div>
-				<img src=<%=kyopoBook.get("image") %> alt="교포문고">
+				<img src=<%=target.get("image") %> alt="교포문고">
 			</div>
 			<div>
-				<span class="display-2 font-weight-bold"><%=kyopoBook.get("title") %></span><br>
-				<span class="display-3 text-info"><%=kyopoBook.get("author") %></span><br>
-				<span class="display-4"><%=kyopoBook.get("publisher") %></span>
+				<span class="display-2 font-weight-bold d-block"><%=target.get("title") %></span><br>
+				<span class="display-3 text-info d-block"><%=target.get("author") %></span><br>
+				<span class="display-4 d-block"><%=target.get("publisher") %></span>
 			</div>
 		</div>
 	</div>		
 			
 	<%
-			break;
-			}
-		}
+//			break;
+//			}
+//		}
 	%>
 		
 	</body>
