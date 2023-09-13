@@ -107,6 +107,11 @@
     musicList.add(musicInfo);
 %>
 
+<%
+	String title = request.getParameter("title");
+	String keyword = request.getParameter("seaRch");
+
+%>
 	
 
 		<div id="wrap" class="container">
@@ -118,7 +123,7 @@
 				<div class="col-2"><h3><a href="#" class="text-success">Melong</a></h3></div>
 				
 				<%-- 검색 영역 --%>
-				<form method="get" action="/section.jsp" class="col-10">
+				<form method="get" action="/lesson03/quiz02/contents.jsp" class="col-10">
 					<div class="col-10 d-flex align-items-center">
 						<div class="input-group col-7">
 							<input type="text" class="form-control" name="seaRch" placeholder="검색어를 입력하세요">
@@ -136,9 +141,26 @@
 				<jsp:include page="nav.jsp" />
 			</nav>
 			
-			<%-- 섹션 --%>
+			<%-- 아티스트 정보, 음악 정보, 곡 목록, 가사 --%>
 			<section class="contents">
+<%
+	if (title == null && keyword == null) {
+
+%>
 				<jsp:include page="section.jsp" />
+<%
+	} else if (title != null) {
+				
+%>
+				<jsp:include page="music.jsp?title=<%=title %>" />
+<%
+	}
+	if (keyword != null) {
+%>
+				<jsp:include page="music.jsp?seaRch=<%=keyword %>" />
+<% 
+	}
+%>
 			</section>
 			
 			<%-- footer --%>

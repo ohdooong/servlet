@@ -85,14 +85,17 @@
 %>
 
 <%
+
+	String keyword = request.getParameter("seaRch");
+
 	String title = request.getParameter("title");
 	
 	Map<String, Object> map = new HashMap<>();
 	
 	for (Map<String, Object> item : musicList) {
 		map = item;
-		if (title.equals(map.get("title"))) {
-			int time = Integer.valueOf((String)map.get("time"));
+		if ((title != null && title.equals(map.get("title"))) || (keyword != null && keyword.equals(map.get("title")))) {
+			int time = Integer.valueOf((int)map.get("time"));
 			int minute = time / 60;
 			int second = time % 60;
 %>
@@ -111,28 +114,32 @@
 				<div class="text-success font-weight-bold"><%=map.get("singer") %></div>
 				
 				<div class="d-flex">
-					<div>
-						<div class="text-light">앨범</div>
-						<div class="text-light">재생시간</div>
-						<div class="text-light">작곡가</div>
-						<div class="text-light">작사가</div>
+					<div class="mr-3">
+						<div class="text-secondary">앨범</div>
+						<div class="text-secondary">재생시간</div>
+						<div class="text-secondary">작곡가</div>
+						<div class="text-secondary">작사가</div>
 					</div>
 					<div>
-						<div class="text-light"><%=map.get("album") %></div>
-						<div class="text-light"><%=minute %>:<%=second %></div>
-						<div class="text-light"><%=map.get("composer") %></div>
-						<div class="text-light"><%=map.get("lyricist") %></div>
+						<div class="text-secondary"><%=map.get("album") %></div>
+						<div class="text-secondary"><%=minute %>:<%=second %></div>
+						<div class="text-secondary"><%=map.get("composer") %></div>
+						<div class="text-secondary"><%=map.get("lyricist") %></div>
 					</div>
 				</div>
 			</div>
+			
+			
 		
 		</div>
+		<%-- 가사 정보 --%>
+		<h3 class="mt-3 font-weight-bold">가사</h3>
+		<hr>
+		<h5 class="font-weight-bold">가사 정보 없음</h5>
 
 <%
-		}
-	}
-	
-
+}
+}
 %>
 
 
