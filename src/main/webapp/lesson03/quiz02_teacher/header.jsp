@@ -4,7 +4,7 @@
 <%-- 로고 영역 --%>
 <div class="col-2 d-flex align-items-center">
 	<h3>
-		<a href="#" class="text-success">Melong</a>
+		<a href="/lesson03/quiz02_teacher/layout1.jsp" class="text-success">Melong</a>
 	</h3>
 </div>
 
