@@ -4,29 +4,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>즐겨찾기 추가</title>
+<title>홍당무 마켓</title>
 
 <!-- bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<style>
+	<jsp:include page="style.jsp" />
+</style>
+
 </head>
+
 <body>
-	<div class="container">
-		<h2 class="font-weight-bold">즐겨찾기 추가</h2>
-		<form method="post" action="/lesson04/add-bookmark"> <!-- get 넘기는값이 길면 안넘어갈수있기 때문에 post로 취한다. -->
-			<div class="form-group">
-				<label for="name" class="font-weight-bold">사이트명:</label>
-				<input type="text" name="name" id="name" class="form-control col-4">
-			</div>
-			
-			<div class="form-group">
-				<label for="url" class="font-weight-bold">사이트 주소:</label>
-				<input type="text" name="url" id="url" class="form-control col-8">
-			</div>
-				
-				<button type="submit" class="btn btn-success">추가</button>
-		</form>
+	<div id="wrap" class="container ">
+	
+		<!-- 헤더영역 -->
+		<header class="header">
+			<jsp:include page="header.jsp" />
+		</header>
+		
+		<!-- 물품 목록, input -->
+		<section class="contents">
+			<jsp:include page="goodsList.jsp" />
+		</section>
+		
+		<footer class="d-flex align-items-center justify-content-center">
+			<jsp:include page="footer.jsp" />
+		</footer>
 	</div>
 </body>
+
 </html>
