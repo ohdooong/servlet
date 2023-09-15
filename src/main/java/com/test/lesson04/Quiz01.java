@@ -26,7 +26,7 @@ public class Quiz01 extends HttpServlet{
 		ms.connect();
 		
 		// DB 인서트 쿼리 수행
-		String insertQuery = "insert into \r\n"
+		String insertQuery = "insert into `real_estate`\r\n"
 				+ "(`realtorId`,`address`,`area`,`type`,`price`)\r\n"
 				+ "values\r\n"
 				+ "(3,'헤라펠리스 101동 5305호',350,'매매',1500000);";
@@ -44,15 +44,16 @@ public class Quiz01 extends HttpServlet{
 		try {
 			ResultSet res = ms.select(selectQuery);
 			while (res.next()) {
-				out.println("매물 주소: " + res.getString("address") + ", 면적: " + res.getInt("area") + ", 타입: " + res.getString("type"));
+				out.println("매물 주소: " + res.getString("address") 
+				+ ", 면적: " + res.getInt("area") 
+				+ ", 타입: " + res.getString("type"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		// DB 종료
+		ms.disconnect();
 	}
-	
-	
 	
 }
